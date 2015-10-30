@@ -1,1 +1,14 @@
-1. The application shall simulate a deck of cards.
+1. The application (app) shall simulate a deck of cards.
+2. The app shall allow up to 5 players.
+3. The app must deal one card to each player for the first round. The number of cards dealt will be incremented by 1 for each followinng round until it reaches the maximum.
+4. After reaching the maximum number of cards that can be dealt, the app shall decrement the number of cards by 1 for each following round until final round (where only 1 card will be dealt).
+5. The app must determine the maximum number of cards that can be dealt based on the number of players.
+6. The app must store players' guesses for each round.
+7. The app shall determine a winner for each trick*.
+8. The app shall compare the number of winning tricks of each player to that player's guess at the beginning.
+9. The app shall add zero to a player's total point if his guess is wrong.
+10. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right.
+11. The app shall store the total point for each player.
+12. The app shall determine the winner of the game after the final round by computing which player(s) has the most points.
+13. The app shall display the name of the winner.
+14. The app shall allow players to input their names at the beginning of the game.
