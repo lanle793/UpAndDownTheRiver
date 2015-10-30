@@ -12,3 +12,7 @@
 12. The app shall determine the winner of the game after the final round by computing which player(s) has the most points.
 13. The app shall display the name of the winner.
 14. The app shall allow players to input their names at the beginning of the game.
+15. The app shall determine a "trump" card.
+
+Appendix
+Trick - A trick is when each player lays down a card and tries to lay the highest one of all the cards, with Ace being the highest and 2 being the lowest. 
