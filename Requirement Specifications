@@ -1,6 +1,6 @@
 1. The application (app) shall simulate a deck of cards.
 2. The app shall allow up to 5 players.
-3. The app must deal one card to each player for the first round. The number of cards dealt will be incremented by 1 for each followinng round until it reaches the maximum.
+3. The app must deal one card to each player for the first round. The number of cards dealt will be incremented by 1 for each following round until it reaches the maximum.
 4. After reaching the maximum number of cards that can be dealt, the app shall decrement the number of cards by 1 for each following round until final round (where only 1 card will be dealt).
 5. The app must determine the maximum number of cards that can be dealt based on the number of players.
 6. The app must store players' guesses for each round.
