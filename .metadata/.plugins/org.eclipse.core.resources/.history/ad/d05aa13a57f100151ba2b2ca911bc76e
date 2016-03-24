@@ -1,0 +1,7 @@
+package cardDeck;
+
+public class Card {
+	priv Suits suit;
+	private Ranks rank;
+
+}

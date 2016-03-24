@@ -1,0 +1,21 @@
+package cardDeck;
+
+public class Card {
+	
+	public enum Suits{
+		SPADES,
+		HEART,
+		DIAMOND,
+		CLUBS
+	}
+	
+	public enum Ranks{
+		
+	}
+	
+	private Suits suit;
+	private Ranks rank;
+	
+	
+
+}

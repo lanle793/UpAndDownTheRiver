@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cardDeck.Card.Ranks"/>
+<fullyQualifiedTypeName name="cardDeck.Card.Suits"/>
+<fullyQualifiedTypeName name="cardDeck.CardDeck"/>
+<fullyQualifiedTypeName name="cardDeck.Card"/>
+</qualifiedTypeNameHistroy>

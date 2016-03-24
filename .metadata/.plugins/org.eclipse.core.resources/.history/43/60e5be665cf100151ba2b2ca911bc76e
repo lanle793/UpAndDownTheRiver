@@ -1,0 +1,54 @@
+package cardDeck;
+
+public class Card {
+	
+	public enum Suits{
+		SPADES,
+		HEART,
+		DIAMOND,
+		CLUBS;
+	}
+	
+	public enum Ranks{
+		ACE(1),
+		TWO(2),
+		THREE(3),
+		FOUR(4),
+		FIVE(5),
+		SIX(6),
+		SEVEN(7),
+		EIGHT(8),
+		NINE(9),
+		TEN(10),
+		JACK(11),
+		QUEEN(12),
+		KING(13);
+		
+		private final int value;
+		
+		Ranks(int value){
+			this.value = value;
+		}
+		
+		public int getValue(){
+			return value;
+		}
+	}
+	
+	private Suits suit;
+	private Ranks rank;
+	
+	public Suits getSuit() {
+		return suit;
+	}
+	public void setSuit(Suits suit) {
+		this.suit = suit;
+	}
+	public Ranks getRank() {
+		return rank;
+	}
+	public void setRank(Ranks rank) {
+		this.rank = rank;
+	}
+	
+}
