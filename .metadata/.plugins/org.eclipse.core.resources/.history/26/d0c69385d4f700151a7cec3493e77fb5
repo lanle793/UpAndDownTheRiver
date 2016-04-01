@@ -1,0 +1,7 @@
+package game;
+
+public class Round {
+	private int numCards;
+	private int numTricks;
+
+}

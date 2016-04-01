@@ -1,0 +1,22 @@
+import GUI.StartupWindow;
+import cardDeck.CardDeck;
+
+public class UpAndDown {
+
+	public static void main(String[] args) {
+		launchApp();
+
+	}
+	
+	private static void launchApp(){
+		CardDeck cardDeck;
+		StartupWindow startupWindow;
+		
+		cardDeck = new CardDeck();
+		cardDeck.shuffle(30);
+		System.out.println(cardDeck.deal());
+		
+		startupWindow = new StartupWindow();
+	}
+
+}

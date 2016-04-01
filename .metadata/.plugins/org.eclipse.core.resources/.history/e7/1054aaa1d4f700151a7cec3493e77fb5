@@ -1,0 +1,27 @@
+package game;
+
+import GUI.StartupWindow;
+import cardDeck.CardDeck;
+
+public class Game {
+	public static final int NUM_PLAYERS = 4;
+	
+	private CardDeck cardDeck;
+	private StartupWindow startupWindow;
+	//private int numPlayers;
+	private Player[] players;
+	
+	public Game(){
+		cardDeck = new CardDeck();
+		cardDeck.shuffle(30);
+		System.out.println(cardDeck.deal());
+		
+		players = new Player[NUM_PLAYERS];
+		for(int i = 0; i < NUM_PLAYERS; i++){
+			
+		}
+		
+		startupWindow = new StartupWindow();
+	}
+
+}

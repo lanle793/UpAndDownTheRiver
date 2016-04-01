@@ -1,0 +1,14 @@
+import GUI.StartupWindow;
+
+public class UpAndDown {
+
+	public static void main(String[] args) {
+		launchApp();
+
+	}
+	
+	private static void launchApp(){
+		StartupWindow start = new StartupWindow();
+	}
+
+}

@@ -4,12 +4,12 @@ import cardDeck.Card.Ranks;
 import cardDeck.Card.Suits;
 
 public class CardDeck {
-	public static final int numCards = 52;		//number of cards in a deck
+	public static final int NUM_CARDS = 52;		//number of cards in a deck
 	private Card[] cardDeck;
 	private int currentCard;
 	
 	public CardDeck(){
-		cardDeck = new Card[numCards];
+		cardDeck = new Card[NUM_CARDS];
 		
 		//add cards to the deck
 		int i = 0;
@@ -30,8 +30,8 @@ public class CardDeck {
 		
 		//swap randomly picked cards
 		for (int i = 0; i < numExchanges; i++){
-			j = (int) (Math.random() * numCards);
-			k = (int) (Math.random() * numCards);
+			j = (int) (Math.random() * NUM_CARDS);
+			k = (int) (Math.random() * NUM_CARDS);
 			Card temp = cardDeck[j];
 			cardDeck[j] = cardDeck[k];
 			cardDeck[k] = temp;
@@ -39,7 +39,7 @@ public class CardDeck {
 	}
 	
 	public Card deal(){
-		if (currentCard < numCards){
+		if (currentCard < NUM_CARDS){
 			return cardDeck[currentCard++];
 		}
 		else {
