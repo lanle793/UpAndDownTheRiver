@@ -1,3 +1,4 @@
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -14,7 +15,15 @@ public class UpAndDown {
 			e.printStackTrace();
 		}
 		
-		launchApp();
+		SwingUtilities.invokeLater(new Runnable(){
+
+			@Override
+			public void run() {
+				launchApp();
+				
+			}
+			
+		});
 
 	}
 	

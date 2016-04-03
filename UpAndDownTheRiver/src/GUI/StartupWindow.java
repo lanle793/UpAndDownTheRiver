@@ -1,11 +1,14 @@
 package GUI;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import game.Game;
 
 public class StartupWindow{
 
@@ -23,6 +26,7 @@ public class StartupWindow{
 		startupWindow = new JFrame("Up And Down The River");
 		contentPane = new JPanel();
 		startupWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		startupWindow.setPreferredSize(new Dimension(400,300));
 		startupWindow.setContentPane(contentPane);
 		startupWindow.setVisible(true);
 		
@@ -31,6 +35,7 @@ public class StartupWindow{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				startupWindow.dispose();
 				GameWindow gameWindow = new GameWindow();
 				
 			}
