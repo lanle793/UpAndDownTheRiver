@@ -1,19 +1,27 @@
 package cardDeck;
 
+import javax.swing.ImageIcon;
+
 public class Card {
 	
 	public enum Suits{
-		SPADES("Spades"),
-		HEART("Heart"),
-		DIAMOND("Diamond"),
-		CLUBS("Clubs");
+		SPADES("Spades", "s"),
+		HEART("Heart", "h"),
+		DIAMOND("Diamond", "d"),
+		CLUBS("Clubs", "c");
 		
 		private final String desc;
+		private final String abbr;
 		
-		Suits(String desc){
+		Suits(String desc, String abbr){
 			this.desc = desc;
+			this.abbr = abbr;
 		}
 		
+		public String getAbbr() {
+			return abbr;
+		}
+
 		public String toString(){
 			return desc;
 		}
@@ -53,6 +61,7 @@ public class Card {
 	
 	private Suits suit;
 	private Ranks rank;
+	private ImageIcon icon;
 	
 	public Card(Ranks r, Suits s){
 		this.rank = r;
@@ -72,6 +81,14 @@ public class Card {
 		this.rank = rank;
 	}
 	
+	public ImageIcon getIcon() {
+		return icon;
+	}
+
+	public void setIcon(ImageIcon icon) {
+		this.icon = icon;
+	}
+
 	public String toString(){
 		return rank.toString() + " of " + suit.toString();
 	}

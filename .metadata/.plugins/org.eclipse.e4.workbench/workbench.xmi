@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_csWMwVdpEeWO-8Q5-zBASA" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_csWMwldpEeWO-8Q5-zBASA" bindingContexts="_csWMxFdpEeWO-8Q5-zBASA">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Player.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Player.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;GameWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/GameWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/GUI/GameWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UpAndDown.java&quot; tooltip=&quot;UpAndDownTheRiver/src/UpAndDown.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/UpAndDown.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Round.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Round.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Round.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Game.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Game.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Game.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/StartupWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/StartupWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;cardDeck.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/cardDeck.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/cardDeck/cardDeck.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Card.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/Card.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/cardDeck/Card.java&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Player.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Player.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Game.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Game.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Game.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;LinkedList.class&quot; tooltip=&quot;java.util.LinkedList&quot;>&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=UpAndDownTheRiver/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_74.jdk\/Contents\/Home\/jre\/lib\/rt.jar&amp;lt;java.util(LinkedList.class&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CardDeck.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/CardDeck.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/cardDeck/CardDeck.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Card.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/Card.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/cardDeck/Card.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CardDisplayPane.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/CardDisplayPane.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/GUI/CardDisplayPane.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LinkedList.java&quot; tooltip=&quot;UpAndDownTheRiver/src/LinkedList/LinkedList.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/LinkedList/LinkedList.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;GameWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/GameWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/GUI/GameWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UpAndDown.java&quot; tooltip=&quot;UpAndDownTheRiver/src/UpAndDown.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/UpAndDown.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Round.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Round.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/Round.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/StartupWindow.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/game/StartupWindow.java&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;cardDeck.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/cardDeck.java&quot;>&#xA;&lt;persistable path=&quot;/UpAndDownTheRiver/src/cardDeck/cardDeck.java&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_csWMwldpEeWO-8Q5-zBASA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_c3tvQldpEeWO-8Q5-zBASA" label="%trimmedwindow.label.eclipseSDK" x="104" y="104" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_csWMwldpEeWO-8Q5-zBASA" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_c3tvQldpEeWO-8Q5-zBASA" label="%trimmedwindow.label.eclipseSDK" x="104" y="104" width="1280" height="716">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -89,7 +89,7 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_dD2GzFdpEeWO-8Q5-zBASA" elementId="org.eclipse.egit.ui.RepositoriesView" toBeRendered="false" ref="_dD0RkFdpEeWO-8Q5-zBASA"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_dD2GzVdpEeWO-8Q5-zBASA" containerData="7500" selectedElement="_dD2GzldpEeWO-8Q5-zBASA">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_dD2GzVdpEeWO-8Q5-zBASA" containerData="7500" selectedElement="_dD2G11dpEeWO-8Q5-zBASA">
               <children xsi:type="basic:PartSashContainer" xmi:id="_dD2GzldpEeWO-8Q5-zBASA" containerData="7500" selectedElement="_dD2Gz1dpEeWO-8Q5-zBASA" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_dD2Gz1dpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_dDloEFdpEeWO-8Q5-zBASA"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_dD2G0FdpEeWO-8Q5-zBASA" containerData="2500" selectedElement="_dD2G0VdpEeWO-8Q5-zBASA">
@@ -142,53 +142,47 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_dDloEFdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.editorss" selectedElement="_dDloEVdpEeWO-8Q5-zBASA">
-      <children xsi:type="basic:PartStack" xmi:id="_dDloEVdpEeWO-8Q5-zBASA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_EzK1EPkjEeWDPoyX6u3uYA">
+      <children xsi:type="basic:PartStack" xmi:id="_dDloEVdpEeWO-8Q5-zBASA" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_YoNpAPfHEeWjccN1_JHU4g">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
-        <children xsi:type="basic:Part" xmi:id="_FBgMcPFWEeWLqeArG3k-MQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Card.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Card.java&quot; partName=&quot;Card.java&quot; title=&quot;Card.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/Card.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/cardDeck/Card.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1176&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
         <children xsi:type="basic:Part" xmi:id="_pZVYwPFkEeWLqeArG3k-MQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="StartupWindow.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; partName=&quot;StartupWindow.java&quot; title=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;954&quot; selectionTopPixel=&quot;133&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;StartupWindow.java&quot; partName=&quot;StartupWindow.java&quot; title=&quot;StartupWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/GUI/StartupWindow.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1014&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_YoNpAPfHEeWjccN1_JHU4g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Game.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Game.java&quot; partName=&quot;Game.java&quot; title=&quot;Game.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Game.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/game/Game.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;650&quot; selectionTopPixel=&quot;187&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_gYT8sPfREeWjccN1_JHU4g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="GameWindow.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;GameWindow.java&quot; partName=&quot;GameWindow.java&quot; title=&quot;GameWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/GameWindow.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/GUI/GameWindow.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;336&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_k-hpoPkgEeWDPoyX6u3uYA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Round.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Round.java&quot; partName=&quot;Round.java&quot; title=&quot;Round.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Round.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/game/Round.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;186&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_xHZDcPkhEeWDPoyX6u3uYA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="UpAndDown.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;UpAndDown.java&quot; partName=&quot;UpAndDown.java&quot; title=&quot;UpAndDown.java&quot; tooltip=&quot;UpAndDownTheRiver/src/UpAndDown.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/UpAndDown.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_EzK1EPkjEeWDPoyX6u3uYA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Player.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Player.java&quot; partName=&quot;Player.java&quot; title=&quot;Player.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Player.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;358&quot; selectionTopPixel=&quot;148&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Game.java&quot; partName=&quot;Game.java&quot; title=&quot;Game.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Game.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/game/Game.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2083&quot; selectionTopPixel=&quot;945&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
           <tags>active</tags>
           <tags>activeOnClose</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_gYT8sPfREeWjccN1_JHU4g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="GameWindow.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;GameWindow.java&quot; partName=&quot;GameWindow.java&quot; title=&quot;GameWindow.java&quot; tooltip=&quot;UpAndDownTheRiver/src/GUI/GameWindow.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/GUI/GameWindow.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;323&quot; selectionTopPixel=&quot;105&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_btE7QPoDEeWNwMDXUOjzZQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Card.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Card.java&quot; partName=&quot;Card.java&quot; title=&quot;Card.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/Card.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/cardDeck/Card.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;330&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_wjyrcPoDEeWNwMDXUOjzZQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="CardDeck.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CardDeck.java&quot; partName=&quot;CardDeck.java&quot; title=&quot;CardDeck.java&quot; tooltip=&quot;UpAndDownTheRiver/src/cardDeck/CardDeck.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/cardDeck/CardDeck.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;570&quot; selectionTopPixel=&quot;30&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          <tags>removeOnHide</tags>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_ChqsoPoMEeWNwMDXUOjzZQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Player.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Player.java&quot; partName=&quot;Player.java&quot; title=&quot;Player.java&quot; tooltip=&quot;UpAndDownTheRiver/src/game/Player.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;175&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <tags>Editor</tags>
+          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
+          <tags>removeOnHide</tags>
         </children>
       </children>
     </sharedElements>
@@ -207,7 +201,7 @@
       <tags>categoryTag:Java</tags>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_dDs80VdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.views.ResourceNavigator" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Navigator" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/filters>&#xA;&lt;expanded>&#xA;&lt;element path=&quot;/UpAndDownTheRiver&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/cardDeck&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/game&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/GUI&quot;/>&#xA;&lt;/expanded>&#xA;&lt;selection>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;/selection>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view LINK_NAVIGATOR_TO_EDITOR=&quot;0&quot; sorter=&quot;1&quot;>&#xA;&lt;filters>&#xA;&lt;filter element=&quot;*.class&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;filter element=&quot;.*&quot; isEnabled=&quot;false&quot;/>&#xA;&lt;/filters>&#xA;&lt;expanded>&#xA;&lt;element path=&quot;/UpAndDownTheRiver&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/game&quot;/>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/GUI&quot;/>&#xA;&lt;/expanded>&#xA;&lt;selection>&#xA;&lt;element path=&quot;/UpAndDownTheRiver/src/game/Player.java&quot;/>&#xA;&lt;/selection>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <menus xmi:id="_jPNP0PkaEeWDPoyX6u3uYA" elementId="org.eclipse.ui.views.ResourceNavigator">
@@ -311,7 +305,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_c54ScFdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_zMnZoPkYEeWDPoyX6u3uYA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_cs4YW1dpEeWO-8Q5-zBASA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_BqrdEPnGEeWNwMDXUOjzZQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_cs4YW1dpEeWO-8Q5-zBASA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_c54ScVdpEeWO-8Q5-zBASA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -335,7 +329,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_c545gldpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_zMuHUPkYEeWDPoyX6u3uYA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_cs2jKFdpEeWO-8Q5-zBASA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_BqvugPnGEeWNwMDXUOjzZQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_cs2jKFdpEeWO-8Q5-zBASA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_c55gkFdpEeWO-8Q5-zBASA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -373,8 +367,21 @@
       <children xsi:type="menu:ToolControl" xmi:id="_dU7PsFdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.ide.perspectivestack(minimized)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
         <tags>TrimStack</tags>
       </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_YKwIAPnXEeWNwMDXUOjzZQ" elementId="left(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
     </trimBars>
-    <trimBars xmi:id="_c_jcoVdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.trim.vertical2" side="Right"/>
+    <trimBars xmi:id="_c_jcoVdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.trim.vertical2" toBeRendered="false" side="Right">
+      <children xsi:type="menu:ToolControl" xmi:id="_YK-KcPnXEeWNwMDXUOjzZQ" elementId="org.eclipse.mylyn.tasks.ui.views.tasksMStack(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_YLE4IPnXEeWNwMDXUOjzZQ" elementId="right(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_YLKXsPnXEeWNwMDXUOjzZQ" elementId="bottom(org.eclipse.jdt.ui.JavaPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+      </children>
+    </trimBars>
   </children>
   <handlers xmi:id="_wHUaQe8gEeWSac5FX6QJJw" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.ArrangeWindowHandler" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.ArrangeWindowHandler" command="_wHUaQO8gEeWSac5FX6QJJw"/>
   <handlers xmi:id="_wHVBUO8gEeWSac5FX6QJJw" elementId="org.eclipse.e4.ui.workbench.renderers.swt.cocoa.MinimizeWindowHandler" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.cocoa.MinimizeWindowHandler" command="_wHUaQu8gEeWSac5FX6QJJw"/>
@@ -638,7 +645,7 @@
     <bindings xmi:id="_wG_qKe8gEeWSac5FX6QJJw" keySequence="ALT+COMMAND+X Q" command="_cs1VJFdpEeWO-8Q5-zBASA">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_ywCLUfkYEeWDPoyX6u3uYA" keySequence="COMMAND+CTRL+F" command="_wHVBUe8gEeWSac5FX6QJJw"/>
+    <bindings xmi:id="_BRZaYfnGEeWNwMDXUOjzZQ" keySequence="COMMAND+CTRL+F" command="_wHVBUe8gEeWSac5FX6QJJw"/>
   </bindingTables>
   <bindingTables xmi:id="_ctcY8VdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.textEditorScope" bindingContext="_cs930VdpEeWO-8Q5-zBASA">
     <bindings xmi:id="_ctfcQVdpEeWO-8Q5-zBASA" keySequence="ALT+ARROW_DOWN" command="_cs1VD1dpEeWO-8Q5-zBASA"/>
@@ -952,7 +959,7 @@
     <bindings xmi:id="_wG7_we8gEeWSac5FX6QJJw" keySequence="F5" command="_wF76Me8gEeWSac5FX6QJJw"/>
   </bindingTables>
   <bindingTables xmi:id="_wHVoYu8gEeWSac5FX6QJJw" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_csWMx1dpEeWO-8Q5-zBASA">
-    <bindings xmi:id="_ywCyYPkYEeWDPoyX6u3uYA" keySequence="M1+W" command="_wHVoYO8gEeWSac5FX6QJJw"/>
+    <bindings xmi:id="_BRaBcPnGEeWNwMDXUOjzZQ" keySequence="M1+W" command="_wHVoYO8gEeWSac5FX6QJJw"/>
   </bindingTables>
   <rootContext xmi:id="_csWMxFdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_csWMxVdpEeWO-8Q5-zBASA" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">

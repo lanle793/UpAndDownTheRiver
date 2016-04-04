@@ -36,7 +36,8 @@ public class StartupWindow{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				startupWindow.dispose();
-				GameWindow gameWindow = new GameWindow();
+				@SuppressWarnings("unused")
+				Game newGame = new Game();
 				
 			}
 			

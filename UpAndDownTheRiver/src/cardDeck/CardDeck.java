@@ -1,5 +1,7 @@
 package cardDeck;
 
+import javax.swing.ImageIcon;
+
 import cardDeck.Card.Ranks;
 import cardDeck.Card.Suits;
 
@@ -15,7 +17,10 @@ public class CardDeck {
 		int i = 0;
 		for (Ranks r : Ranks.values()){
 			for (Suits s: Suits.values()){
-				cardDeck[i++] = new Card(r, s);
+				Card newCard = new Card(r, s);
+				newCard.setIcon(new ImageIcon("cardImages/" + newCard.getRank().getValue()
+						+ newCard.getSuit().getAbbr() + ".gif"));
+				cardDeck[i++] = newCard;
 			}
 		}
 		
