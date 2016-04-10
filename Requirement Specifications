@@ -5,12 +5,12 @@
 5. The app must determine the maximum number of cards that can be dealt based on the number of players.
 6. The app must store players' guesses for each round.
 7. The app shall determine a winner for each trick*.
-8. The app shall compare the number of winning tricks of each player to that player's guess at the beginning.
-9. The app shall add zero to a player's total point if his guess is wrong.
-10. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right.
+8. The app shall compare the number of winning tricks of each player to that player's guess at the beginning of each round.
+9. The app shall add zero to a player's total point if his guess is wrong at the end of each round.
+10. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right at the end of each round.
 11. The app shall store the total point for each player.
 12. The app shall determine the winner of the game after the final round by computing which player(s) has the most points.
-13. The app shall display the name of the winner.
+13. The app shall display the name of the winner after the game ends.
 14. The app shall allow players to input their names at the beginning of the game.
 15. The app shall determine a "trump" card.
 16. The app shall shuffle the deck of cards at the beginning of each round.
