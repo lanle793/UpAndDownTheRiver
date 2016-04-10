@@ -17,19 +17,21 @@ public class Game {
 	//private int numRounds;
 	private LinkedList<Player> players;
 	private Card trump;
+	private Card first;
 	private int totalGuess;
-	private String invalidGuess;
 	private GameWindow gameWindow;
 	private int userNum;
+	private GameController controller;
 	
 	public Game(){
 		
 		totalGuess = 0;
-		invalidGuess = "";
-		trump = null;
-		userNum = 0;
+		controller = new GameController();
+		players = new LinkedList<Player>();
+		gameWindow = new GameWindow();
 		
-		enterPlayers();
+		controller.enterPlayers(players, NUM_PLAYERS);
+		userNum = players.size();
 		
 		/*for(int i = 1; i <= NUM_ROUNDS; i++){
 			startNewRound(i, i);
@@ -39,27 +41,8 @@ public class Game {
 			startNewRound(10 - i, 10 + i);
 		}*/
 		
-		gameWindow = new GameWindow();
-		
 		startNewRound(5, 5);
-		
-		players.getLast().showCardsOnHand();
 
-	}
-	
-	private void enterPlayers(){
-		players = new LinkedList<Player>();
-		String userName = JOptionPane.showInputDialog(null, "Enter your name", 
-				"Player Information", JOptionPane.QUESTION_MESSAGE);
-		Player user = new Player(userName, true);
-		players.add(user);
-		for(int i = 1; i < NUM_PLAYERS; i++){
-			String computerName = JOptionPane.showInputDialog(null, "Enter your opponent name (Player " + i + ")", 
-					"Player Information", JOptionPane.QUESTION_MESSAGE);
-			Player computer = new Player(computerName, false);
-			players.add(computer);
-		}
-		userNum = players.size();
 	}
 	
 	private void startNewRound(int numTricks, int roundNum){
@@ -69,78 +52,56 @@ public class Game {
 		cardDeck.shuffle(30);
 		
 		//deal card(s) to each player
-		for(int i = 0; i < players.size(); i++){
-			for(int j = 0; j < numTricks; j++){
-				players.get(i).getCardsOnHand().add(cardDeck.deal());
-			}
-		}
+		controller.dealCards(numTricks, cardDeck, players);
 		
 		//display user's hand
 		gameWindow.displayUserHand(players.get(userNum - 1));
 		
-		/*//determine the trump card
+		//determine the trump card
 		trump = cardDeck.deal();
+		gameWindow.displayTrumpCard(trump);
 		
 		//get players' guesses
-		getGuesses(numTricks, roundNum);
+		/*totalGuess = controller.getGuesses(totalGuess, numTricks, roundNum, players);
 		
 		//start laying down cards
-		*/
+		gameWindow.enableCardsOnHand();
 		
-		userNum++;
-		if(userNum > players.size()){
+		for(int i = 1; i <= numTricks; i++){
+			startNewTrick(i);
+		}
+		
+		//userNum++;
+		/*if(userNum > players.size()){
 			userNum -= players.size();
-		}
+		}*/
 	}
 	
-	private boolean isValidGuess(int guess, int totalGuess, int numTricks, Player player){
-		if(guess > totalGuess){
-			invalidGuess = "Guess is larger than the number of tricks";
-			return false;
-		}
-		
-		if(player.isDealer()){
-			if(guess + totalGuess == numTricks){
-				invalidGuess = "The total guess cannot be equal to the number of tricks";
-				return false;
-			}
-		}
-		
-		return true;
-	}
-	
-	private void getGuesses(int numTricks, int roundNum){
-		
-		//get players' guesses
-		for(int i = 0; i < players.size(); i++){
-			int guess;
+	private void startNewTrick(int trickNum){
+		if(trickNum == 1){
 			
-			//get user's guess
-			if(players.get(i).isHuman()){
-				
-				guess = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your guess for round " + roundNum
-						+ ")", "Player Guess", JOptionPane.QUESTION_MESSAGE));
-				
-				while(!isValidGuess(guess, totalGuess, numTricks, players.get(i))){
-					JOptionPane.showMessageDialog(null, "Invalid Guess - " + invalidGuess);
-					guess = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your guess for round " + roundNum  
-							+ ")", "Player Guess", JOptionPane.QUESTION_MESSAGE));
-				}
-				
-				players.get(i).setGuess(guess);
-				totalGuess += guess;
-				
+			//first player pick any card
+			if(players.getFirst().isHuman()){
+				JOptionPane.showMessageDialog(null, "Pick any card to lay down");
 			} else{
-				//get computer's guess
-				guess = (int) (Math.random() * (numTricks + 1));
+				players.getFirst().getRandomCard();
+			}
+			
+			first = players.getFirst().getCardOnTable();
+			
+			//for the rest of the players...
+			for(int j = 1; j < players.size(); j++){
 				
-				while(!isValidGuess(guess, totalGuess, numTricks, players.get(i))){
-					guess = (int) (Math.random() * (numTricks + 1));
+				//users get to choose the card to lay down
+				if(players.get(j).isHuman()){
+					JOptionPane.showMessageDialog(null, "Your turn");
+				} else{
+					//each computer player lays down one card
+					players.get(j).layCardOnTable();
 				}
 				
-				players.get(i).setGuess(guess);
-				totalGuess += guess;
 			}
+		} else{
 			
 		}
 	}

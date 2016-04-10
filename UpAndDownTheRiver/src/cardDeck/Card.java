@@ -62,6 +62,7 @@ public class Card {
 	private Suits suit;
 	private Ranks rank;
 	private ImageIcon icon;
+	private boolean isValid;
 	
 	public Card(Ranks r, Suits s){
 		this.rank = r;
@@ -89,8 +90,20 @@ public class Card {
 		this.icon = icon;
 	}
 
+	public boolean isValid() {
+		return isValid;
+	}
+
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
+
 	public String toString(){
 		return rank.toString() + " of " + suit.toString();
+	}
+	
+	public boolean equals(Card c){
+		return (this.rank.value == c.rank.value) && (this.suit.abbr.equals(c.suit.abbr));
 	}
 	
 }

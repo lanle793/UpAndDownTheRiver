@@ -28,6 +28,7 @@ public class UpAndDown {
 	}
 	
 	private static void launchApp(){
+		@SuppressWarnings("unused")
 		StartupWindow start = new StartupWindow();
 	}
 
