@@ -4,7 +4,7 @@
 4. After reaching the maximum number of cards that can be dealt, the app shall decrement the number of cards by 1 for each following round until final round (where only 1 card will be dealt).
 5. The app must determine the maximum number of cards that can be dealt based on the number of players.
 6. The app must store players' guesses for each round.
-7. The app shall determine a winner for each trick*.
+7. The app shall determine a winner for each trick* according to the rule.
 8. The app shall compare the number of winning tricks of each player to that player's guess at the beginning of each round.
 9. The app shall add zero to a player's total point if his guess is wrong at the end of each round.
 10. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right at the end of each round.
