@@ -1,6 +1,7 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import cardDeck.Card;
@@ -20,17 +21,24 @@ public class Player {
 		this.setHuman(isHuman);
 		setNumPoints(0);
 		setCardsOnHand(new ArrayList<Card>());
-		
+		cardOnTable = null;
 	}
 	
 	public void getRandomCard(){
 		int rand = (int)(Math.random() * cardsOnHand.size());
 		cardOnTable = cardsOnHand.get(rand);
 		cardsOnHand.remove(rand);
+		
 	}
 	
 	public void layCardOnTable(){
-		
+		for (Iterator<Card> iterator = cardsOnHand.iterator(); iterator.hasNext();) {
+			Card c = iterator.next();
+			if (c.isValid()) {
+				cardOnTable = c;
+				iterator.remove();
+			}
+		}
 	}
 	
 	public int getNumPoints() {

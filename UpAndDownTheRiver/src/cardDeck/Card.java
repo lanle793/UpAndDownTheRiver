@@ -67,6 +67,15 @@ public class Card {
 	public Card(Ranks r, Suits s){
 		this.rank = r;
 		this.suit = s;
+		isValid = false;
+	}
+	
+	public boolean isSameSuit(Card c){
+		if (this.suit.abbr.equals(c.suit.abbr)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public Suits getSuit() {

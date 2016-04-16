@@ -22,16 +22,17 @@ public class Game {
 	private GameWindow gameWindow;
 	private int userNum;
 	private GameController controller;
+	private int startIndex;
 	
 	public Game(){
 		
 		totalGuess = 0;
 		controller = new GameController();
 		players = new LinkedList<Player>();
-		gameWindow = new GameWindow();
 		
 		controller.enterPlayers(players, NUM_PLAYERS);
-		userNum = players.size();
+		gameWindow = new GameWindow();
+		userNum = 1;
 		
 		/*for(int i = 1; i <= NUM_ROUNDS; i++){
 			startNewRound(i, i);
@@ -41,7 +42,7 @@ public class Game {
 			startNewRound(10 - i, 10 + i);
 		}*/
 		
-		startNewRound(5, 5);
+		startNewRound(1, 1);
 
 	}
 	
@@ -62,14 +63,17 @@ public class Game {
 		gameWindow.displayTrumpCard(trump);
 		
 		//get players' guesses
-		/*totalGuess = controller.getGuesses(totalGuess, numTricks, roundNum, players);
+		//totalGuess = controller.getGuesses(totalGuess, numTricks, roundNum, players);
 		
 		//start laying down cards
+		JOptionPane.showMessageDialog(null, "Let's Start!");
 		gameWindow.enableCardsOnHand();
 		
-		for(int i = 1; i <= numTricks; i++){
+		/*for(int i = 1; i <= numTricks; i++){
 			startNewTrick(i);
-		}
+		}*/
+		
+		startNewTrick(1);
 		
 		//userNum++;
 		/*if(userNum > players.size()){
@@ -78,32 +82,76 @@ public class Game {
 	}
 	
 	private void startNewTrick(int trickNum){
+		
+		//first trick of a round
 		if(trickNum == 1){
+			startIndex = 1;
 			
-			//first player pick any card
-			if(players.getFirst().isHuman()){
-				JOptionPane.showMessageDialog(null, "Pick any card to lay down");
-			} else{
-				players.getFirst().getRandomCard();
-			}
+			//first turn
+			layFirstCard(players.getFirst());
 			
-			first = players.getFirst().getCardOnTable();
-			
-			//for the rest of the players...
-			for(int j = 1; j < players.size(); j++){
-				
-				//users get to choose the card to lay down
-				if(players.get(j).isHuman()){
-					JOptionPane.showMessageDialog(null, "Your turn");
-				} else{
-					//each computer player lays down one card
-					players.get(j).layCardOnTable();
-				}
-				
-			}
 		} else{
 			
 		}
+	}
+	
+	public void continueAfterUserTurn(){
+		//for the rest of the players...
+		layFollowingCards(players);
+	}
+	
+	private void layFirstCard(Player player){
+		//first turn player pick any card
+		if(player.isHuman()){
+			JOptionPane.showMessageDialog(null, "Pick any card to lay down");
+			
+			//add end turn button
+			gameWindow.displayEndTurnBtn(this, player);
+			
+		} else{
+			player.getRandomCard();
+			setFirst(player.getCardOnTable());
+			gameWindow.displayCardOnTable(player);
+			layFollowingCards(players);
+		}
+
+	}
+	
+	private void layFollowingCards(LinkedList<Player> players){
+		JOptionPane.showMessageDialog(null, "Continue");
+		for(int j = startIndex; j < players.size(); j++){
+			controller.checkValidCards(players.get(j).getCardsOnHand(), first, trump);
+			
+			//users get to choose the card to lay down
+			if(players.get(j).isHuman()){
+				JOptionPane.showMessageDialog(null, "Your turn");
+				startIndex = j + 1;
+				
+				//disable invalid cards
+				gameWindow.disableInvalidCards(players.get(j));
+				
+				//add end turn button
+				gameWindow.displayEndTurnBtn(this, players.get(j));
+				
+				break;
+				
+			} else{
+				
+				//each computer player lays down one card
+				players.get(j).layCardOnTable();
+				System.out.println(players.get(j).getCardOnTable());
+				gameWindow.displayCardOnTable(players.get(j));
+			}
+			
+		}
+	}
+
+	public Card getFirst() {
+		return first;
+	}
+
+	public void setFirst(Card first) {
+		this.first = first;
 	}
 
 }

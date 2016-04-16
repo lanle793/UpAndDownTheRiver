@@ -10,28 +10,34 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import cardDeck.Card;
+import game.Game;
 import game.Player;
 
 public class GameWindow {
 	private JFrame gameWindow;
-	private JPanel cardDisplay;
+	private JPanel handDisplay;
 	private JPanel tableDisplay;
+	private JPanel cardDisplay;
 	private Map<Card, JButton> cardsOnHand;
+	private JButton endTurnBtn;
 	
 	public GameWindow(){
 		gameWindow = new JFrame("New Game");
-		cardDisplay = new JPanel();
+		handDisplay = new JPanel();
 		tableDisplay = new JPanel();
+		cardDisplay = new JPanel();
 		cardsOnHand = new HashMap<Card, JButton>();
 		gameWindow.setVisible(true);
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setPreferredSize(new Dimension(400,300));
-		gameWindow.add(cardDisplay, BorderLayout.SOUTH);
+		endTurnBtn = new JButton("End Turn");
+		tableDisplay.add(cardDisplay, BorderLayout.NORTH);
+		gameWindow.add(handDisplay, BorderLayout.SOUTH);
 		gameWindow.add(tableDisplay, BorderLayout.CENTER);
-		gameWindow.pack();
 		
 	}
 	
@@ -43,9 +49,9 @@ public class GameWindow {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					player.setCardOnTable(c);
-					cardDisplay.remove(card);
-					cardDisplay.revalidate();
-					cardDisplay.repaint();
+					handDisplay.remove(card);
+					handDisplay.revalidate();
+					handDisplay.repaint();
 					player.getCardsOnHand().remove(c);
 					
 				}
@@ -53,8 +59,10 @@ public class GameWindow {
 			});
 			card.setEnabled(false);
 			cardsOnHand.put(c, card);
-			cardDisplay.add(card);
+			handDisplay.add(card);
 		}
+		
+		gameWindow.pack();
 		
 	}
 	
@@ -80,11 +88,40 @@ public class GameWindow {
 	
 	public void displayTrumpCard(Card trump){
 		JLabel trumpCard = new JLabel(trump.getIcon());
-		tableDisplay.add(trumpCard);
+		tableDisplay.add(trumpCard, BorderLayout.CENTER);
 	}
 	
-	public void displayCardsOnTable(){
+	public void displayCardOnTable(Player player){
+		Card c = player.getCardOnTable();
+		if(c == null) {
+			return;
+		} else {
+			cardDisplay.add(new JLabel(c.getIcon()));
+			return;
+		}
 		
+	}
+	
+	public void displayEndTurnBtn(Game game, Player player){
+		gameWindow.add(endTurnBtn, BorderLayout.NORTH);
+		endTurnBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (player.getCardOnTable() == null) {
+					JOptionPane.showMessageDialog(null, "Pick your card before end turn");
+				} else {
+					game.setFirst(player.getCardOnTable());
+					game.continueAfterUserTurn();
+					displayCardOnTable(player);
+					gameWindow.remove(endTurnBtn);
+					gameWindow.revalidate();
+					gameWindow.repaint();
+				}
+				
+			}
+			
+		});
 	}
 
 }

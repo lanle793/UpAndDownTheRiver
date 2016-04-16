@@ -17,14 +17,20 @@ public class GameController {
 	}
 	
 	public void enterPlayers(LinkedList<Player> players, int numPlayers){
+		String userName, computerName;
 		
-		String userName = JOptionPane.showInputDialog(null, "Enter your name", 
-				"Player Information", JOptionPane.QUESTION_MESSAGE);
+		do {
+			userName = JOptionPane.showInputDialog(null, "Enter your name", 
+					"Player Information", JOptionPane.QUESTION_MESSAGE);
+		} while (userName == null || userName.isEmpty());
 		Player user = new Player(userName, true);
 		players.add(user);
+		
 		for(int i = 1; i < numPlayers; i++){
-			String computerName = JOptionPane.showInputDialog(null, "Enter your opponent name (Player " + i + ")", 
-					"Player Information", JOptionPane.QUESTION_MESSAGE);
+			do {
+				computerName = JOptionPane.showInputDialog(null, "Enter your opponent name (Player " + i + ")", 
+						"Player Information", JOptionPane.QUESTION_MESSAGE);
+			} while (computerName == null || computerName.isEmpty());
 			Player computer = new Player(computerName, false);
 			players.add(computer);
 		}
@@ -47,7 +53,7 @@ public class GameController {
 			String input;
 			boolean isValid;
 			
-			//get user's guess --- need to validate input
+			//get user's guess
 			if(players.get(i).isHuman()){
 				input = JOptionPane.showInputDialog(null, "Enter your guess for round " 
 						+ roundNum, "Player Guess", JOptionPane.QUESTION_MESSAGE);
@@ -125,15 +131,46 @@ public class GameController {
 		return true;
 	}
 	
-	public void checkValidCards(List<Card> cardsOnHand, Card first){
+	public void checkValidCards(List<Card> cardsOnHand, Card first, Card trump){
+		int numValidCards = 0;
 		
+		//check for all cards with the same suits as the first card
+		for(Card c : cardsOnHand) {
+			if (c.isSameSuit(first)) {
+				c.setValid(true);
+				numValidCards++;
+			}
+		}
+		
+		//check for trump cards if there are no cards with the first card's suit
+		if (numValidCards == 0) {
+			for(Card c : cardsOnHand) {
+				if (c.isSameSuit(trump)) {
+					c.setValid(true);
+					numValidCards++;
+				}
+			}
+		}
+		
+		//if there are no trump cards either, player can pick any card on hand
+		for(Card c : cardsOnHand) {
+			c.setValid(true);
+		}
 	}
 	
 	public void findTrickWinner(){
 		
 	}
 	
+	public void findGameWinner(){
+		
+	}
+	
 	public void addPoints(){
+		
+	}
+	
+	public void reset(){
 		
 	}
 
