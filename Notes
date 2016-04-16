@@ -1,1 +1,2 @@
 Use IOManager.setLookAndFeel for user interface
+Look out for ConcurrentModificationException
