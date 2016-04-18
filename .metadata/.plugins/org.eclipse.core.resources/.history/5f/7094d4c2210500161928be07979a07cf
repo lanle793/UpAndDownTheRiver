@@ -1,34 +1,45 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import cardDeck.Card;
 
 public class Player {
 	private String name;
-	private ArrayList<Card> cardsOnHand;
+	private List<Card> cardsOnHand;
 	private Card cardOnTable;
 	private boolean isHuman;
+	private boolean isTrickWinner;
+	private boolean isDealer;
 	private int numPoints;
 	private int guess;
-	private boolean isDealer;
+	private int numTricksWon;
 	
 	public Player(String name, boolean isHuman){
 		this.name = name;
 		this.setHuman(isHuman);
 		setNumPoints(0);
 		setCardsOnHand(new ArrayList<Card>());
-		
+		cardOnTable = null;
 	}
 	
 	public void getRandomCard(){
 		int rand = (int)(Math.random() * cardsOnHand.size());
 		cardOnTable = cardsOnHand.get(rand);
 		cardsOnHand.remove(rand);
+		
 	}
 	
 	public void layCardOnTable(){
-		
+		for (Iterator<Card> iterator = cardsOnHand.iterator(); iterator.hasNext();) {
+			Card c = iterator.next();
+			if (c.isValid()) {
+				cardOnTable = c;
+				iterator.remove();
+			}
+		}
 	}
 	
 	public int getNumPoints() {
@@ -63,18 +74,20 @@ public class Player {
 		this.isDealer = isDealer;
 	}
 
-	public ArrayList<Card> getCardsOnHand() {
+	public boolean isTrickWinner() {
+		return isTrickWinner;
+	}
+
+	public void setTrickWinner(boolean isTrickWinner) {
+		this.isTrickWinner = isTrickWinner;
+	}
+
+	public List<Card> getCardsOnHand() {
 		return cardsOnHand;
 	}
 
-	public void setCardsOnHand(ArrayList<Card> cardsOnHand) {
+	public void setCardsOnHand(List<Card> cardsOnHand) {
 		this.cardsOnHand = cardsOnHand;
-	}
-	
-	public void showCardsOnHand(){
-		for(Card c : cardsOnHand){
-			System.out.println(c);
-		}
 	}
 
 	public Card getCardOnTable() {
@@ -83,6 +96,14 @@ public class Player {
 
 	public void setCardOnTable(Card cardOnTable) {
 		this.cardOnTable = cardOnTable;
+	}
+
+	public int getNumTricksWon() {
+		return numTricksWon;
+	}
+
+	public void setNumTricksWon(int numTricksWon) {
+		this.numTricksWon = numTricksWon;
 	}
 
 	public String toString(){

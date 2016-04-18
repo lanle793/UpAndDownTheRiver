@@ -158,15 +158,73 @@ public class GameController {
 		}
 	}
 	
-	public void findTrickWinner(){
+	public void findTrickWinner(LinkedList<Player> players, Card first, Card trump){
+		int winner = 0;
+		Card highest = first;
+		
+		for (int i = 0; i < players.size(); i++) {
+			if (compare(players.get(i).getCardOnTable(), highest, first, trump)) {
+				highest = players.get(i).getCardOnTable();
+				winner = i;
+			}
+		}	
+		
+		players.get(winner).setTrickWinner(true);
+	}
+	
+	public void findGameWinner(LinkedList<Player> players){
+		int winner = 0;
+		int highest = players.getFirst().getNumPoints();
+		
+		for (int i = 1; i < players.size(); i++) {
+			if (players.get(i).getNumPoints() > highest) {
+				highest = players.get(i).getNumPoints();
+				winner = i;
+			}
+		}	
+		
+		players.get(winner).setGameWinner(true);
+	}
+	
+	public void addPoints(Player player){
+		if (player.getNumTricksWon() == player.getGuess()) {
+			int newPoints = player.getNumPoints() + player.getNumTricksWon() + 10;
+			player.setNumPoints(newPoints);
+			return;
+		} else {
+			return;
+		}
 		
 	}
 	
-	public void findGameWinner(){
-		
-	}
-	
-	public void addPoints(){
+	private boolean compare(Card c1, Card c2, Card first, Card trump){
+		//if either card is of trump suit
+		if (c1.isSameSuit(trump)) {
+			if (c2.isSameSuit(trump)) {
+				if (c1.getRank().getValue() >= c2.getRank().getValue()) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return true;
+			}
+		} else if (c2.isSameSuit(trump)) {
+			return false;
+		//if either card is of first card's suit	
+		} else if (c1.isSameSuit(first)) {
+			if (c2.isSameSuit(first)) {
+				if (c1.getRank().getValue() >= c2.getRank().getValue()) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return true;
+			}
+		} else {
+			return false;
+		}
 		
 	}
 	

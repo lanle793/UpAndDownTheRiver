@@ -13,8 +13,10 @@ public class Player {
 	private boolean isHuman;
 	private boolean isTrickWinner;
 	private boolean isDealer;
+	private boolean isGameWinner;
 	private int numPoints;
 	private int guess;
+	private int numTricksWon;
 	
 	public Player(String name, boolean isHuman){
 		this.name = name;
@@ -95,6 +97,22 @@ public class Player {
 
 	public void setCardOnTable(Card cardOnTable) {
 		this.cardOnTable = cardOnTable;
+	}
+
+	public int getNumTricksWon() {
+		return numTricksWon;
+	}
+
+	public void setNumTricksWon(int numTricksWon) {
+		this.numTricksWon = numTricksWon;
+	}
+
+	public boolean isGameWinner() {
+		return isGameWinner;
+	}
+
+	public void setGameWinner(boolean isGameWinner) {
+		this.isGameWinner = isGameWinner;
 	}
 
 	public String toString(){
