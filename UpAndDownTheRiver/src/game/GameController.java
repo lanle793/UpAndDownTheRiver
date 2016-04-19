@@ -158,7 +158,7 @@ public class GameController {
 		}
 	}
 	
-	public void findTrickWinner(LinkedList<Player> players, Card first, Card trump){
+	public int findTrickWinner(LinkedList<Player> players, Card first, Card trump){
 		int winner = 0;
 		Card highest = first;
 		
@@ -169,7 +169,9 @@ public class GameController {
 			}
 		}	
 		
-		players.get(winner).setTrickWinner(true);
+		players.get(winner).setNumTricksWon(players.get(winner).getNumTricksWon() + 1);
+		
+		return winner;
 	}
 	
 	public void findGameWinner(LinkedList<Player> players){

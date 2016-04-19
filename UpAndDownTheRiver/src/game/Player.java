@@ -11,7 +11,6 @@ public class Player {
 	private List<Card> cardsOnHand;
 	private Card cardOnTable;
 	private boolean isHuman;
-	private boolean isTrickWinner;
 	private boolean isDealer;
 	private boolean isGameWinner;
 	private int numPoints;
@@ -24,6 +23,7 @@ public class Player {
 		setNumPoints(0);
 		setCardsOnHand(new ArrayList<Card>());
 		cardOnTable = null;
+		numTricksWon = 0;
 	}
 	
 	public void getRandomCard(){
@@ -41,6 +41,14 @@ public class Player {
 				iterator.remove();
 			}
 		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public int getNumPoints() {
@@ -73,14 +81,6 @@ public class Player {
 
 	public void setDealer(boolean isDealer) {
 		this.isDealer = isDealer;
-	}
-
-	public boolean isTrickWinner() {
-		return isTrickWinner;
-	}
-
-	public void setTrickWinner(boolean isTrickWinner) {
-		this.isTrickWinner = isTrickWinner;
 	}
 
 	public List<Card> getCardsOnHand() {

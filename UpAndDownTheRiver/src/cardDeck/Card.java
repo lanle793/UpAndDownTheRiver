@@ -28,7 +28,7 @@ public class Card {
 	}
 	
 	public enum Ranks{
-		ACE(1, "Ace"),
+		ACE(14, "Ace"),
 		TWO(2, "Two"),
 		THREE(3, "Three"),
 		FOUR(4, "Four"),

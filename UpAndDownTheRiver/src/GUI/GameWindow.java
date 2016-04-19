@@ -24,6 +24,7 @@ public class GameWindow {
 	private JPanel cardDisplay;
 	private Map<Card, JButton> cardsOnHand;
 	private JButton endTurnBtn;
+	private InfoWindow infoWindow;
 	
 	public GameWindow(){
 		gameWindow = new JFrame("New Game");
@@ -96,7 +97,7 @@ public class GameWindow {
 		if(c == null) {
 			return;
 		} else {
-			cardDisplay.add(new JLabel(c.getIcon()));
+			cardDisplay.add(new JLabel(player.getName(), c.getIcon(), JLabel.CENTER));
 			return;
 		}
 		
@@ -122,6 +123,15 @@ public class GameWindow {
 			}
 			
 		});
+	}
+	
+	public void declareTrickWinner(Player player) {
+		JOptionPane.showMessageDialog(null, "The winner of this trick is " + player.getName());
+	}
+	
+	public void displayGuessInfo(Game game) {
+		infoWindow = new InfoWindow();
+		infoWindow.displayGuessTable(game);
 	}
 
 }
