@@ -28,8 +28,6 @@ public class Player {
 	}
 	
 	public void getRandomCard(){
-		
-		System.out.println(cardsOnHand.size());
 		Random rand = new Random();
 		int r = rand.nextInt(cardsOnHand.size());
 		cardOnTable = cardsOnHand.get(r);

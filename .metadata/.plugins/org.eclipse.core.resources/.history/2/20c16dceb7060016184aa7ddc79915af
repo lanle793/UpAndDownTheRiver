@@ -230,16 +230,10 @@ public class GameController {
 		
 	}
 	
-	public void resetAfterRound(LinkedList<Player> players){
+	public void reset(LinkedList<Player> players){
 		for (Player p : players) {
 			p.setCardOnTable(null);
 			p.setNumTricksWon(0);
-		}
-	}
-	
-	public void resetAfterTrick(LinkedList<Player> players){
-		for (Player p : players) {
-			p.setCardOnTable(null);
 		}
 	}
 

@@ -116,7 +116,6 @@ public class Game {
 		endIndex = startIndex - 2;
 		
 		System.out.println("First turn: " + player.getName());
-		System.out.println(player.getName() + " has " + player.getCardsOnHand().size() + " left");
 		
 		//first turn player pick any card
 		if(player.isHuman()){

@@ -88,8 +88,8 @@ public class Game {
 			controller.addPoints(p);
 		}*/
 		
-		//reset number of tricks won and cards on table
-		controller.resetAfterRound(players);
+		//reset guesses and cards on table
+		controller.reset(players);
 		
 		userNum++;
 		if (userNum > players.size()) {
@@ -116,7 +116,6 @@ public class Game {
 		endIndex = startIndex - 2;
 		
 		System.out.println("First turn: " + player.getName());
-		System.out.println(player.getName() + " has " + player.getCardsOnHand().size() + " left");
 		
 		//first turn player pick any card
 		if(player.isHuman()){
@@ -225,9 +224,6 @@ public class Game {
 		
 		//decrement number of tricks left
 		numTricks--;
-		
-		//reset cards on table
-		controller.resetAfterTrick(players);
 		
 		startNewTrick(numTricks);
 	}
