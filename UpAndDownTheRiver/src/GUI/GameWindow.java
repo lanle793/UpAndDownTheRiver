@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 import javax.swing.JButton;
@@ -22,23 +23,46 @@ public class GameWindow {
 	private JPanel handDisplay;
 	private JPanel tableDisplay;
 	private JPanel cardDisplay;
+	private JPanel navPane;
 	private Map<Card, JButton> cardsOnHand;
-	private JButton endTurnBtn;
 	private InfoWindow infoWindow;
+	private String[][] guessInfo;
+	private String[][] pointInfo;
+	private LinkedList<Player> players;
 	
 	public GameWindow(){
 		gameWindow = new JFrame("New Game");
-		handDisplay = new JPanel();
-		tableDisplay = new JPanel();
-		cardDisplay = new JPanel();
-		cardsOnHand = new HashMap<Card, JButton>();
 		gameWindow.setVisible(true);
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setPreferredSize(new Dimension(400,300));
-		endTurnBtn = new JButton("End Turn");
+		
+		handDisplay = new JPanel();
+		tableDisplay = new JPanel();
+		cardDisplay = new JPanel();
+		navPane = new JPanel();
+		cardsOnHand = new HashMap<Card, JButton>();
+		
+		JButton infoBtn = new JButton("Game Stats");
+		infoBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				infoWindow = new InfoWindow();
+				infoWindow.setGuessInfo(guessInfo);
+				infoWindow.setPointInfo(pointInfo);
+				infoWindow.setPlayers(players);
+				
+			}
+			
+		});
+		navPane.add(infoBtn, BorderLayout.LINE_START);
+		
 		tableDisplay.add(cardDisplay, BorderLayout.NORTH);
 		gameWindow.add(handDisplay, BorderLayout.SOUTH);
 		gameWindow.add(tableDisplay, BorderLayout.CENTER);
+		gameWindow.add(navPane, BorderLayout.NORTH);
+		
+		gameWindow.pack();
 		
 	}
 	
@@ -103,8 +127,15 @@ public class GameWindow {
 		
 	}
 	
+	public void removeCardOnTable() {
+		cardDisplay.removeAll();
+		cardDisplay.revalidate();
+		cardDisplay.repaint();
+	}
+	
 	public void displayEndTurnBtn(Game game, Player player){
-		gameWindow.add(endTurnBtn, BorderLayout.NORTH);
+		JButton endTurnBtn = new JButton("End Turn");
+		navPane.add(endTurnBtn, BorderLayout.LINE_END);
 		endTurnBtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -113,11 +144,12 @@ public class GameWindow {
 					JOptionPane.showMessageDialog(null, "Pick your card before end turn");
 				} else {
 					game.setFirst(player.getCardOnTable());
-					game.continueAfterUserTurn();
+					System.out.println(player.getName() + " : " + player.getCardOnTable());
 					displayCardOnTable(player);
-					gameWindow.remove(endTurnBtn);
-					gameWindow.revalidate();
-					gameWindow.repaint();
+					game.continueAfterUserTurn();
+					navPane.remove(endTurnBtn);
+					navPane.revalidate();
+					navPane.repaint();
 				}
 				
 			}
@@ -128,10 +160,29 @@ public class GameWindow {
 	public void declareTrickWinner(Player player) {
 		JOptionPane.showMessageDialog(null, "The winner of this trick is " + player.getName());
 	}
-	
-	public void displayGuessInfo(Game game) {
-		infoWindow = new InfoWindow();
-		infoWindow.displayGuessTable(game);
+
+	public String[][] getGuessInfo() {
+		return guessInfo;
+	}
+
+	public void setGuessInfo(String[][] guessInfo) {
+		this.guessInfo = guessInfo;
+	}
+
+	public String[][] getPointInfo() {
+		return pointInfo;
+	}
+
+	public void setPointInfo(String[][] pointInfo) {
+		this.pointInfo = pointInfo;
+	}
+
+	public LinkedList<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(LinkedList<Player> players) {
+		this.players = players;
 	}
 
 }

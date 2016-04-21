@@ -13,7 +13,6 @@ public class Player {
 	private Card cardOnTable;
 	private boolean isHuman;
 	private boolean isDealer;
-	private boolean isGameWinner;
 	private int numPoints;
 	private int guess;
 	private int numTricksWon;
@@ -43,6 +42,7 @@ public class Player {
 			if (c.isValid()) {
 				cardOnTable = c;
 				iterator.remove();
+				break;
 			}
 		}
 	}
@@ -109,14 +109,6 @@ public class Player {
 
 	public void setNumTricksWon(int numTricksWon) {
 		this.numTricksWon = numTricksWon;
-	}
-
-	public boolean isGameWinner() {
-		return isGameWinner;
-	}
-
-	public void setGameWinner(boolean isGameWinner) {
-		this.isGameWinner = isGameWinner;
 	}
 
 	public String toString(){

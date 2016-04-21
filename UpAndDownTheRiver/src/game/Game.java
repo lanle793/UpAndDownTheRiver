@@ -10,11 +10,11 @@ import cardDeck.CardDeck;
 
 public class Game {
 	public static final int NUM_PLAYERS = 5;
-	public static final int NUM_ROUNDS = 10;	//round # that has the max number of cards
+	public static final int NUM_ROUNDS = 19;
 	
 	private CardDeck cardDeck;
-	//private int numPlayers;
-	//private int numRounds;
+	private int roundNum;
+	private int initNumTricks;
 	private LinkedList<Player> players;
 	private Card trump;
 	private Card first;
@@ -25,41 +25,43 @@ public class Game {
 	private int startIndex;
 	private int endIndex;
 	private String[][] guessInfo;
-	private int[][] pointInfo;
+	private String[][] pointInfo;
 	private int numTricks;
+	private boolean downTheRiver;
 	
 	public Game(){
 		
 		totalGuess = 0;
 		controller = new GameController();
 		players = new LinkedList<Player>();
-		guessInfo = new String[2 * NUM_ROUNDS - 1][NUM_PLAYERS];
-		pointInfo = new int[2 * NUM_ROUNDS - 1][NUM_PLAYERS];
+		guessInfo = new String[NUM_ROUNDS][NUM_PLAYERS];
+		pointInfo = new String[NUM_ROUNDS][NUM_PLAYERS];
+		downTheRiver = false;
 		
 		controller.enterPlayers(players, NUM_PLAYERS);
 		gameWindow = new GameWindow();
+		gameWindow.setPlayers(players);
 		userNum = 1;
+		initNumTricks = 1;
+		roundNum = 1;
 		
-		/*for(int i = 1; i <= NUM_ROUNDS; i++){
-			startNewRound(i, i);
-		}
+		startNewRound();
 		
-		for(int i = 1; i < NUM_ROUNDS; i++){
-			startNewRound(10 - i, 10 + i);
-		}*/
-		
-		startNewRound(2, 2);
+		//controller.findGameWinner(players);
 
 	}
 	
-	private void startNewRound(int numTricks, int roundNum){
+	private void startNewRound(){
+		if (roundNum > NUM_ROUNDS) {
+			return;
+		}
 		
 		//create a card deck and shuffle it
 		cardDeck = new CardDeck();
 		cardDeck.shuffle(30);
 		
 		//deal card(s) to each player
-		controller.dealCards(numTricks, cardDeck, players);
+		controller.dealCards(initNumTricks, cardDeck, players);
 		
 		//display user's hand
 		gameWindow.displayUserHand(players.get(userNum - 1));
@@ -69,11 +71,7 @@ public class Game {
 		gameWindow.displayTrumpCard(trump);
 		
 		//get players' guesses
-		totalGuess = controller.getGuesses(totalGuess, numTricks, roundNum, players);
-		
-		//record guesses
-		fillGuessInfo(roundNum);
-		gameWindow.displayGuessInfo(this);
+		totalGuess = controller.getGuesses(totalGuess, initNumTricks, roundNum, players);
 		
 		//start laying down cards
 		JOptionPane.showMessageDialog(null, "Let's Start!");
@@ -81,20 +79,27 @@ public class Game {
 		
 		startIndex = 1;
 		
-		startNewTrick(numTricks);
+		startNewTrick(initNumTricks);
 		
-		//add points to players after each round
-		/*for (Player p : players) {
-			controller.addPoints(p);
-		}*/
+		//record guesses and points
+		/*fillGuessInfo(roundNum);
+		gameWindow.setGuessInfo(guessInfo);
+		fillPointInfo(roundNum);
+		gameWindow.setPointInfo(pointInfo);
 		
-		//reset number of tricks won and cards on table
-		controller.resetAfterRound(players);
-		
-		userNum++;
-		if (userNum > players.size()) {
-			userNum -= players.size();
+		if (downTheRiver) {
+			initNumTricks--;
+		} else {
+			initNumTricks++;
+			if (initNumTricks == 10) {
+				downTheRiver = true;
+			}
 		}
+		
+		roundNum++;
+		
+		startNewRound();*/
+		
 	}
 	
 	private void startNewTrick(int numTricks){
@@ -102,7 +107,25 @@ public class Game {
 		if (this.numTricks > 0) {
 			layFirstCard(players.get(startIndex - 1));
 		} else {
-			return;
+			JOptionPane.showMessageDialog(null, "End of round");
+			
+			//add points to players after each round
+			for (Player p : players) {
+				controller.addPoints(p);
+			}
+			
+			//reset number of tricks won and cards on table
+			controller.resetAfterRound(players);
+			
+			//the first player becomes the last player in line
+			/*Player last = players.getFirst();
+			players.removeFirst();
+			players.addLast(last);
+			
+			userNum++;
+			if (userNum > players.size()) {
+				userNum -= players.size();
+			}*/
 		}
 			
 	}
@@ -110,13 +133,28 @@ public class Game {
 	public void continueAfterUserTurn(){
 		//for the rest of the players...
 		layFollowingCards(players);
+		
+		//find trick winner
+		startIndex = controller.findTrickWinner(players, first, trump) + 1;
+		
+		//declare trick winner
+		gameWindow.declareTrickWinner(players.get(startIndex - 1));
+		
+		//decrement number of tricks left
+		numTricks--;
+		
+		//reset cards on table
+		controller.resetAfterTrick(players);
+		gameWindow.removeCardOnTable();
+		
+		startNewTrick(numTricks);
 	}
 	
 	private void layFirstCard(Player player){
 		endIndex = startIndex - 2;
 		
-		System.out.println("First turn: " + player.getName());
-		System.out.println(player.getName() + " has " + player.getCardsOnHand().size() + " left");
+		System.out.println("\nFirst turn: " + player.getName());
+		System.out.println(player.getName() + " has " + player.getCardsOnHand().size() + " left\n");
 		
 		//first turn player pick any card
 		if(player.isHuman()){
@@ -128,6 +166,7 @@ public class Game {
 		} else{
 			player.getRandomCard();
 			setFirst(player.getCardOnTable());
+			System.out.println(player.getName() + " : " + player.getCardOnTable());
 			gameWindow.displayCardOnTable(player);
 			layFollowingCards(players);
 		}
@@ -135,6 +174,11 @@ public class Game {
 	}
 	
 	private void layFollowingCards(LinkedList<Player> players){
+		//if user goes the last turn
+		if (startIndex == -1) {
+			return;
+		}
+		
 		JOptionPane.showMessageDialog(null, "Continue");
 		
 		if (startIndex > endIndex) {
@@ -164,7 +208,7 @@ public class Game {
 					//each computer player lays down one card
 					JOptionPane.showMessageDialog(null, players.get(j).getName() + "'s turn");
 					players.get(j).layCardOnTable();
-					System.out.println(players.get(j).getCardOnTable());
+					System.out.println(players.get(j).getName() + " : " + players.get(j).getCardOnTable());
 					gameWindow.displayCardOnTable(players.get(j));
 				}
 				
@@ -179,7 +223,12 @@ public class Game {
 						JOptionPane.showMessageDialog(null, "Your turn");
 						
 						//reset start index
-						startIndex = j + 1;
+						if (endIndex == j) {
+							startIndex = -1;
+						} else {
+							startIndex = j + 1;
+						}
+						
 						if (startIndex >= players.size()) {
 							startIndex = 0;
 						}
@@ -197,7 +246,7 @@ public class Game {
 						//each computer player lays down one card
 						JOptionPane.showMessageDialog(null, players.get(j).getName() + "'s turn");
 						players.get(j).layCardOnTable();
-						System.out.println(players.get(j).getCardOnTable());
+						System.out.println(players.get(j).getName() + " : " + players.get(j).getCardOnTable());
 						gameWindow.displayCardOnTable(players.get(j));
 					}
 					
@@ -205,37 +254,33 @@ public class Game {
 			}
 		
 		} else {
-			for(int j = startIndex; j < players.size(); j++){
+			for(int j = startIndex; j <= endIndex; j++){
 				controller.checkValidCards(players.get(j).getCardsOnHand(), first, trump);
 				
 				//each computer player lays down one card
 				JOptionPane.showMessageDialog(null, players.get(j).getName() + "'s turn");
 				players.get(j).layCardOnTable();
-				System.out.println(players.get(j).getCardOnTable());
+				System.out.println(players.get(j).getName() + " : " + players.get(j).getCardOnTable());
 				gameWindow.displayCardOnTable(players.get(j));
 				
 			}
 		}
 		
-		//find trick winner
-		startIndex = controller.findTrickWinner(players, first, trump) + 1;
-		
-		//declare trick winner
-		gameWindow.declareTrickWinner(players.get(startIndex - 1));
-		
-		//decrement number of tricks left
-		numTricks--;
-		
-		//reset cards on table
-		controller.resetAfterTrick(players);
-		
-		startNewTrick(numTricks);
 	}
 	
 	private void fillGuessInfo(int roundNum) {
 		for (int i = 0; i < players.size(); i++) {
 			for (int j = 0; j < NUM_PLAYERS; j++) {
 				guessInfo[roundNum - 1][j] = Integer.toString(players.get(i).getGuess());
+			}
+			
+		}
+	}
+	
+	private void fillPointInfo(int roundNum) {
+		for (int i = 0; i < players.size(); i++) {
+			for (int j = 0; j < NUM_PLAYERS; j++) {
+				pointInfo[roundNum - 1][j] = Integer.toString(players.get(i).getNumPoints());
 			}
 			
 		}

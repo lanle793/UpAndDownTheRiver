@@ -175,25 +175,32 @@ public class GameController {
 	}
 	
 	public void findGameWinner(LinkedList<Player> players){
-		int winner = 0;
+
 		int highest = players.getFirst().getNumPoints();
 		
 		for (int i = 1; i < players.size(); i++) {
 			if (players.get(i).getNumPoints() > highest) {
 				highest = players.get(i).getNumPoints();
-				winner = i;
 			}
 		}	
 		
-		players.get(winner).setGameWinner(true);
+		for (Player p : players) {
+			if (highest == p.getNumPoints()) {
+				JOptionPane.showMessageDialog(null, "The winner is " + p.getName());
+			}
+		}
+		
 	}
 	
 	public void addPoints(Player player){
 		if (player.getNumTricksWon() == player.getGuess()) {
-			int newPoints = player.getNumPoints() + player.getNumTricksWon() + 10;
+			int addPoints = player.getNumTricksWon() + 10;
+			JOptionPane.showMessageDialog(null, player.getName() + " got " + addPoints + " more points");
+			int newPoints = player.getNumPoints() + addPoints;
 			player.setNumPoints(newPoints);
 			return;
 		} else {
+			JOptionPane.showMessageDialog(null, player.getName() + " got 0 more points");
 			return;
 		}
 		
