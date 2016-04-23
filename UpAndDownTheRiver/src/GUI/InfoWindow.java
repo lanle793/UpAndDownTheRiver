@@ -3,17 +3,12 @@ package GUI;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.LinkedList;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-
-import game.Player;
 
 public class InfoWindow {
 	private JFrame infoWindow;
@@ -22,7 +17,7 @@ public class InfoWindow {
 	private JPanel btnPanel;
 	private String[][] guessInfo;
 	private String[][] pointInfo;
-	private LinkedList<Player> players;
+	private String[] columnHeader;
 	
 	public InfoWindow() {
 		infoWindow = new JFrame();
@@ -68,28 +63,18 @@ public class InfoWindow {
 	}
 	
 	public void displayGuessTable(){
-		String[] columnHeader = new String[players.size()];
-		for (int i = 0; i < players.size(); i++) {
-			columnHeader[i] = players.get(i).getName();
-		}
 		
-		TableModel model = new DefaultTableModel(guessInfo, columnHeader);
-		guessTable = new JTable(model);
+		guessTable = new JTable(guessInfo, columnHeader);
 		
-		infoWindow.add(guessTable, BorderLayout.LINE_START);
+		infoWindow.add(new JScrollPane(guessTable), BorderLayout.LINE_START);
 		infoWindow.pack();
 	}
 	
 	public void displayPointTable() {
-		String[] columnHeader = new String[players.size()];
-		for (int i = 0; i < players.size(); i++) {
-			columnHeader[i] = players.get(i).getName();
-		}
 		
-		TableModel model = new DefaultTableModel(pointInfo, columnHeader);
-		pointTable = new JTable(model);
+		pointTable = new JTable(pointInfo, columnHeader);
 		
-		infoWindow.add(pointTable, BorderLayout.LINE_START);
+		infoWindow.add(new JScrollPane(pointTable), BorderLayout.LINE_START);
 		infoWindow.pack();
 	}
 
@@ -109,12 +94,12 @@ public class InfoWindow {
 		this.guessInfo = guessInfo;
 	}
 
-	public LinkedList<Player> getPlayers() {
-		return players;
+	public String[] getColumnHeader() {
+		return columnHeader;
 	}
 
-	public void setPlayers(LinkedList<Player> players) {
-		this.players = players;
+	public void setColumnHeader(String[] columnHeader) {
+		this.columnHeader = columnHeader;
 	}
 
 }

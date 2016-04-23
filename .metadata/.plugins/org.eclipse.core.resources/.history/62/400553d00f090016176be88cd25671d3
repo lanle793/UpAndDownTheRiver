@@ -1,0 +1,107 @@
+package GUI;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+public class InfoWindow {
+	private JFrame infoWindow;
+	private JTable guessTable;
+	private JTable pointTable;
+	private JPanel btnPanel;
+	private String[][] guessInfo;
+	private String[][] pointInfo;
+	private String[] columnHeader;
+	
+	public InfoWindow() {
+		infoWindow = new JFrame();
+		infoWindow.setVisible(true);
+		infoWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		btnPanel = new JPanel();
+		
+		JButton guessBtn = new JButton("Guess Table");
+		guessBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (guessInfo == null) {
+					JOptionPane.showMessageDialog(null, "No data");
+				} else {
+					displayGuessTable();
+				}
+				
+			}
+			
+		});
+		btnPanel.add(guessBtn);
+		
+		JButton pointBtn = new JButton("Point Table");
+		pointBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (pointInfo == null) {
+					JOptionPane.showMessageDialog(null, "No data");
+				} else {
+					displayPointTable();
+				}
+				
+			}
+			
+		});
+		btnPanel.add(pointBtn);
+		
+		infoWindow.add(btnPanel, BorderLayout.NORTH);
+		infoWindow.pack();
+	}
+	
+	public void displayGuessTable(){
+		
+		guessTable = new JTable(guessInfo, columnHeader);
+		
+		infoWindow.add(new JScrollPane(guessTable), BorderLayout.LINE_START);
+		infoWindow.pack();
+	}
+	
+	public void displayPointTable() {
+		
+		pointTable = new JTable(pointInfo, columnHeader);
+		
+		infoWindow.add(new JScrollPane(pointTable), BorderLayout.LINE_START);
+		infoWindow.pack();
+	}
+
+	public String[][] getPointInfo() {
+		return pointInfo;
+	}
+
+	public void setPointInfo(String[][] pointInfo) {
+		this.pointInfo = pointInfo;
+	}
+
+	public String[][] getGuessInfo() {
+		return guessInfo;
+	}
+
+	public void setGuessInfo(String[][] guessInfo) {
+		this.guessInfo = guessInfo;
+	}
+
+	public String[] getColumnHeader() {
+		return columnHeader;
+	}
+
+	public void setColumnHeader(String[] columnHeader) {
+		this.columnHeader = columnHeader;
+	}
+
+}

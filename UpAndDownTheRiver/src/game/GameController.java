@@ -134,6 +134,11 @@ public class GameController {
 	public void checkValidCards(List<Card> cardsOnHand, Card first, Card trump){
 		int numValidCards = 0;
 		
+		//reset cards on hand
+		for (Card c: cardsOnHand) {
+			c.setValid(false);
+		}
+		
 		//check for all cards with the same suits as the first card
 		for(Card c : cardsOnHand) {
 			if (c.isSameSuit(first)) {
@@ -153,9 +158,12 @@ public class GameController {
 		}
 		
 		//if there are no trump cards either, player can pick any card on hand
-		for(Card c : cardsOnHand) {
-			c.setValid(true);
+		if (numValidCards == 0) {
+			for(Card c : cardsOnHand) {
+				c.setValid(true);
+			}
 		}
+		
 	}
 	
 	public int findTrickWinner(LinkedList<Player> players, Card first, Card trump){
@@ -175,6 +183,8 @@ public class GameController {
 	}
 	
 	public void findGameWinner(LinkedList<Player> players){
+		
+		JOptionPane.showMessageDialog(null, "You have played the last round");
 
 		int highest = players.getFirst().getNumPoints();
 		

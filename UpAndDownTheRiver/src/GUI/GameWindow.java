@@ -2,6 +2,7 @@ package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -13,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import cardDeck.Card;
 import game.Game;
 import game.Player;
@@ -23,26 +23,30 @@ public class GameWindow {
 	private JPanel handDisplay;
 	private JPanel tableDisplay;
 	private JPanel cardDisplay;
+	private JPanel trumpDisplay;
 	private JPanel navPane;
 	private Map<Card, JButton> cardsOnHand;
 	private InfoWindow infoWindow;
+	private JButton infoBtn;
 	private String[][] guessInfo;
 	private String[][] pointInfo;
+	private String[] columnHeader;
 	private LinkedList<Player> players;
 	
 	public GameWindow(){
 		gameWindow = new JFrame("New Game");
 		gameWindow.setVisible(true);
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gameWindow.setPreferredSize(new Dimension(400,300));
+		gameWindow.setPreferredSize(new Dimension(800,600));
 		
 		handDisplay = new JPanel();
 		tableDisplay = new JPanel();
 		cardDisplay = new JPanel();
 		navPane = new JPanel();
+		trumpDisplay = new JPanel();
 		cardsOnHand = new HashMap<Card, JButton>();
 		
-		JButton infoBtn = new JButton("Game Stats");
+		infoBtn = new JButton("Game Stats");
 		infoBtn.addActionListener(new ActionListener() {
 
 			@Override
@@ -50,15 +54,18 @@ public class GameWindow {
 				infoWindow = new InfoWindow();
 				infoWindow.setGuessInfo(guessInfo);
 				infoWindow.setPointInfo(pointInfo);
-				infoWindow.setPlayers(players);
+				infoWindow.setColumnHeader(columnHeader);
 				
 			}
 			
 		});
+		infoBtn.setEnabled(false);
 		navPane.add(infoBtn, BorderLayout.LINE_START);
 		
-		tableDisplay.add(cardDisplay, BorderLayout.NORTH);
-		gameWindow.add(handDisplay, BorderLayout.SOUTH);
+		tableDisplay.setLayout(new GridLayout(3, 1, 10, 10));
+		tableDisplay.add(cardDisplay);
+		tableDisplay.add(trumpDisplay);
+		tableDisplay.add(handDisplay);
 		gameWindow.add(tableDisplay, BorderLayout.CENTER);
 		gameWindow.add(navPane, BorderLayout.NORTH);
 		
@@ -107,13 +114,22 @@ public class GameWindow {
 						btn.setEnabled(false);
 					}
 				}
+			} else {
+				for(Map.Entry<Card, JButton> entry: cardsOnHand.entrySet()){
+					Card card = entry.getKey();
+					JButton btn = entry.getValue();
+					if(card.equals(c)){
+						btn.setEnabled(true);
+					}
+				}
 			}
 		}
 	}
 	
 	public void displayTrumpCard(Card trump){
 		JLabel trumpCard = new JLabel(trump.getIcon());
-		tableDisplay.add(trumpCard, BorderLayout.CENTER);
+		trumpDisplay.add(trumpCard, BorderLayout.CENTER);
+		gameWindow.pack();
 	}
 	
 	public void displayCardOnTable(Player player){
@@ -122,6 +138,7 @@ public class GameWindow {
 			return;
 		} else {
 			cardDisplay.add(new JLabel(player.getName(), c.getIcon(), JLabel.CENTER));
+			gameWindow.pack();
 			return;
 		}
 		
@@ -133,7 +150,7 @@ public class GameWindow {
 		cardDisplay.repaint();
 	}
 	
-	public void displayEndTurnBtn(Game game, Player player){
+	public void displayEndTurnBtn(Game game, Player player, boolean isFirst){
 		JButton endTurnBtn = new JButton("End Turn");
 		navPane.add(endTurnBtn, BorderLayout.LINE_END);
 		endTurnBtn.addActionListener(new ActionListener() {
@@ -143,7 +160,9 @@ public class GameWindow {
 				if (player.getCardOnTable() == null) {
 					JOptionPane.showMessageDialog(null, "Pick your card before end turn");
 				} else {
-					game.setFirst(player.getCardOnTable());
+					if (isFirst) {
+						game.setFirst(player.getCardOnTable());
+					}
 					System.out.println(player.getName() + " : " + player.getCardOnTable());
 					displayCardOnTable(player);
 					game.continueAfterUserTurn();
@@ -155,10 +174,44 @@ public class GameWindow {
 			}
 			
 		});
+		gameWindow.pack();
+	}
+	
+	public void displayNextRdBtn(Game game) {
+		JButton nextRdBtn = new JButton("Next Round");
+		navPane.add(nextRdBtn, BorderLayout.CENTER);
+		nextRdBtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (game.isEndOfRound()) {
+					game.startNextRound();
+					navPane.remove(nextRdBtn);
+					navPane.revalidate();
+					navPane.repaint();
+				} else {
+					JOptionPane.showMessageDialog(null, "Finish this round before starting a new round");
+				}
+				
+			}
+			
+		});
+		gameWindow.pack();
 	}
 	
 	public void declareTrickWinner(Player player) {
 		JOptionPane.showMessageDialog(null, "The winner of this trick is " + player.getName());
+	}
+	
+	public void removeTrumpCard() {
+		trumpDisplay.removeAll();
+		trumpDisplay.revalidate();
+		trumpDisplay.repaint();
+		gameWindow.pack();
+	}
+	
+	public void enableGameStats() {
+		infoBtn.setEnabled(true);
 	}
 
 	public String[][] getGuessInfo() {
@@ -183,6 +236,10 @@ public class GameWindow {
 
 	public void setPlayers(LinkedList<Player> players) {
 		this.players = players;
+		columnHeader = new String[players.size()];
+		for (int i = 0; i < players.size(); i++) {
+			columnHeader[i] = players.get(i).getName();
+		}
 	}
 
 }

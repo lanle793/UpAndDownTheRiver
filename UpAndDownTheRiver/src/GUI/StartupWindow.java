@@ -1,8 +1,11 @@
 package GUI;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -49,7 +52,11 @@ public class StartupWindow{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
+					Desktop.getDesktop().open(new File("UpAndDownRules.pdf"));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				
 			}
 			
