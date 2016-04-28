@@ -1,21 +1,20 @@
 1. The application (app) shall simulate a deck of cards.
 2. The app shall allow 5 players to play (1 player is the user).
-3. The app must deal one card to each player for the first round. The number of cards dealt will be incremented by 1 for each following round until it reaches the maximum.
+3. The app must deal one card to each player for the first round. The number of cards dealt will be incremented by 1 for each following round until it reaches the maximum (round 10).
 4. After reaching the maximum number of cards that can be dealt, the app shall decrement the number of cards by 1 for each following round until final round (where only 1 card will be dealt).
-5. The app must determine the maximum number of cards that can be dealt.
-6. The app must store players' guesses for each round.
-7. The app shall determine a winner for each trick* according to the rule.
-8. The app shall compare the number of winning tricks of each player to that player's guess at the end of each round.
-9. The app shall add zero to a player's total point if his guess is wrong at the end of each round.
-10. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right at the end of each round.
-11. The app shall store the total point for each player.
-12. The app shall determine the winner of the game after the final round by computing which player(s) has the most points.
-13. The app shall display the name of the winner after the game ends.
-14. The app shall allow players to input their names at the beginning of the game.
-15. The app shall determine a "trump" card at the beginning of each round.
-16. The app shall shuffle the deck of cards at the beginning of each round.
-17. The app shall determine the player to go first in each trick.
-18. The app shall show user which card(s) is invalid to play in each trick according to the rule.
+5. The app must store players' guesses for each round.
+6. The app shall determine a winner for each trick* according to the rule.
+7. The app shall compare the number of winning tricks of each player to that player's guess at the end of each round.
+8. The app shall add zero to a player's total point if his guess is wrong at the end of each round.
+9. The app shall add 10 plus the number of winning tricks to a player's total point if his guess is right at the end of each round.
+10. The app shall store the total point for each player.
+11. The app shall determine the winner of the game after the final round by computing which player(s) has the most points.
+12. The app shall display the name of the winner after the game ends.
+13. The app shall allow players to input their names at the beginning of the game.
+14. The app shall determine a "trump" card at the beginning of each round.
+15. The app shall shuffle the deck of cards at the beginning of each round.
+16. The app shall determine the player to go first in each trick.
+17. The app shall show user which card(s) is invalid to play in each trick according to the rule.
 
 Appendix
 Trick - A trick is when each player lays down a card and tries to lay the highest one of all the cards, with Ace being the highest and 2 being the lowest. 
